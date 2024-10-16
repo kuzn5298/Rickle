@@ -1,0 +1,11 @@
+@tailwind base;
+
+@layer base {
+  :root {
+    --primary: #b2df28;
+    --background: #000400;
+    --card: #121319;
+    --white: #ececec;
+    --grey: #a8a8a8;
+  }
+}
