@@ -25,9 +25,12 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <html lang='en' className={`${sigmar.variable} ${roboto.variable}`}>
+    <html lang='en'>
       <body>
-        <div id='root' className='flex flex-col'>
+        <div
+          id='root'
+          className={`${sigmar.variable} ${roboto.variable} flex flex-col`}
+        >
           <Header />
           <main id='scroll-container' className='flex-1 overflow-auto'>
             {children}

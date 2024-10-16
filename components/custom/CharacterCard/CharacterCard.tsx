@@ -27,7 +27,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
   origin,
   location,
 }) => (
-  <Link href={`/character/${id}`}>
+  <Link href={`/characters/${id}`} prefetch={false}>
     <article className='flex gap-3 bg-card rounded overflow-hidden hover:shadow-hover-card transition-shadow'>
       <section className='relative min-w-40 min-h-40'>
         <Image src={image} alt={name} width={160} height={160} />
