@@ -1,9 +1,10 @@
 import { PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
-import { Sigmar, Roboto } from 'next/font/google';
 import { Header } from '@/components';
 
 import '@/styles/index.css';
+
+import { Sigmar, Roboto } from 'next/font/google';
 
 const sigmar = Sigmar({
   weight: '400',
@@ -25,12 +26,12 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <html lang='en'>
+    <html
+      lang='en'
+      className={`${sigmar.variable} ${roboto.variable} font-sans`}
+    >
       <body>
-        <div
-          id='root'
-          className={`${sigmar.variable} ${roboto.variable} flex flex-col`}
-        >
+        <div id='root' className='flex flex-col'>
           <Header />
           <main id='scroll-container' className='flex-1 overflow-auto'>
             {children}
