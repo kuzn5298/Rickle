@@ -7,10 +7,6 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    fontFamily: {
-      roboto: ['var(--font-roboto)'],
-      sigmar: ['var(--font-sigmar)'],
-    },
     screens: {
       sm: '480px',
       md: '768px',
@@ -21,6 +17,10 @@ const config: Config = {
       padding: '1.5rem',
     },
     extend: {
+      fontFamily: {
+        roboto: ['var(--font-roboto)'],
+        sigmar: ['var(--font-sigmar)'],
+      },
       colors: {
         primary: 'var(--primary)',
         background: 'var(--background)',
