@@ -26,7 +26,7 @@ const config: Config = {
         background: 'var(--background)',
         card: 'var(--card)',
         white: 'var(--white)',
-        grey: 'var(--grey)',
+        gray: 'var(--gray)',
       },
       boxShadow: {
         'hover-card': '0 0 24px 0 var(--primary)',

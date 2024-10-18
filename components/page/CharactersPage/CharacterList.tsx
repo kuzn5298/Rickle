@@ -3,7 +3,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Character } from '@/types';
 import { characterService } from '@/services';
-import { CharacterCard } from '../CharacterCard';
+import { CharacterCard } from './CharacterCard';
+import { CardSkeleton } from '@/components/core';
+
+const CARDS_NUMBER = 20;
+const LOADING_CARDS = new Array(CARDS_NUMBER).fill(null).map((_, i) => i);
 
 export interface CharacterListProps {
   initData: Character[];
@@ -68,6 +72,7 @@ export const CharacterList: React.FC<CharacterListProps> = ({
           status={character.status}
         />
       ))}
+      {loading && LOADING_CARDS.map((key) => <CardSkeleton key={key} />)}
     </section>
   );
 };

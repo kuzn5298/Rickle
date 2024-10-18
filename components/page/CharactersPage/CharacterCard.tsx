@@ -1,5 +1,6 @@
+import { Card } from '@/components/core';
+import { formatUnknown } from '@/libs/utils';
 import { CharacterLocation, CharacterStatus } from '@/types';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export interface CharacterCardProps {
@@ -28,31 +29,36 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
   location,
 }) => (
   <Link href={`/characters/${id}`} prefetch={false}>
-    <article className='flex gap-3 bg-card rounded overflow-hidden hover:shadow-hover-card transition-shadow'>
-      <section className='relative min-w-40 min-h-40'>
-        <Image src={image} alt={name} width={160} height={160} />
-      </section>
-      <section className='text-[10px] p-3 overflow-hidden'>
-        <div className='mb-4'>
+    <Card
+      image={image}
+      className='text-[10px] hover:shadow-hover-card transition-shadow'
+      title={
+        <div>
           <p className='font-sigmar mb-0.5 text-sm truncate'>{name}</p>
           <p className='flex gap-1 items-center'>
             <span className={`${STATUS_COLOR[status]} size-1.5 rounded-full`} />
             <span>
-              {status} - {species}
+              {formatUnknown(status)} - {species}
             </span>
           </p>
         </div>
-        <div className='mb-2.5'>
-          <p className='mb-1.5 font-medium text-grey truncate'>
-            Last known location:
-          </p>
-          <p className='truncate'>{location?.name}</p>
-        </div>
+      }
+      body={
         <div>
-          <p className='mb-1.5 font-medium text-grey truncate'>Origin:</p>
-          <p className='truncate'>{origin?.name}</p>
+          <div className='mb-2.5'>
+            <p className='mb-1.5 font-medium text-gray truncate'>
+              Last known location:
+            </p>
+            <p className='truncate'>
+              {formatUnknown(location?.name, 'No data')}
+            </p>
+          </div>
+          <div>
+            <p className='mb-1.5 font-medium text-gray truncate'>Origin:</p>
+            <p className='truncate'>{formatUnknown(origin?.name, 'No data')}</p>
+          </div>
         </div>
-      </section>
-    </article>
+      }
+    />
   </Link>
 );

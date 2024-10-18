@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
-import { Header } from '@/components';
+import { Header } from '@/components/app';
 
 import '@/styles/index.css';
 

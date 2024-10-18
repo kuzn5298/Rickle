@@ -1,5 +1,5 @@
-import { CharacterList } from '@/components';
 import { characterService } from '@/services';
+import { CharacterList } from '@/components/page';
 
 const FIRST_PAGE = 1;
 
